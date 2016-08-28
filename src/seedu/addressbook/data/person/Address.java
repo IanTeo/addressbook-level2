@@ -8,10 +8,11 @@ import seedu.addressbook.data.exception.IllegalValueException;
  */
 public class Address {
 
-    public static final String EXAMPLE = "123, some street, #12-34, 654321";
-    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses must be in the format block"
+    public static final String EXAMPLE = Block.EXAMPLE + ", " + Street.EXAMPLE + ", " + Unit.EXAMPLE + ", "
+                        + PostalCode.EXAMPLE;
+    public static final String MESSAGE_ADDRESS_CONSTRAINTS = "Person addresses must be in the format: block"
                                 + ", street, unit, postal code. Each seperated by a comma.";
-    public static final String ADDRESS_VALIDATION_REGEX = "[\\w]+,[\\s\\w]+,[\\s\\d#-]+,[\\s\\w]+";
+    public static final String ADDRESS_VALIDATION_REGEX = ".+, .+, .+, .+"; //"[\\w]+,[\\s\\w]+,[\\s\\d#-]+,[\\s\\w]+";
     
     public static final int ADDRESS_DETAIL_COUNT = 4;
     public static final int ADDRESS_DETAIL_INDEX_BLOCK = 0;
@@ -45,7 +46,7 @@ public class Address {
     }
 
     /**
-     * Returns true if a given string is a valid person email.
+     * Returns true if a given string is a valid person address.
      */
     public static boolean isValidAddress(String test) {
         return test.matches(ADDRESS_VALIDATION_REGEX);
