@@ -10,5 +10,10 @@ public class Unit {
     public String getUnitNumber() {
         return unitNumber;
     }
+    
+    @Override
+    public String toString() {
+        return unitNumber;
+    }
 
 }

@@ -11,4 +11,9 @@ public class PostalCode {
         return postalCode;
     }
 
+    @Override
+    public String toString() {
+        return postalCode;
+    }
+    
 }

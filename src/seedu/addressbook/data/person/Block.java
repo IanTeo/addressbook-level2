@@ -10,4 +10,10 @@ public class Block {
     public String getBlockNum() {
         return blockNum;
     }
+    
+    @Override
+    public String toString() {
+        return blockNum;
+    }
+    
 }

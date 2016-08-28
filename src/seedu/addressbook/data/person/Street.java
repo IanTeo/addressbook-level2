@@ -10,5 +10,10 @@ public class Street {
     public String getStreetName() {
         return streetName;
     }
+    
+    @Override
+    public String toString() {
+        return streetName;
+    }
 
 }
