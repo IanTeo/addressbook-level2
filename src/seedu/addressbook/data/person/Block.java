@@ -1,13 +1,13 @@
 package seedu.addressbook.data.person;
 
 public class Block {
-    private int blockNum;
+    private String blockNum;
     
-    public Block(int block) {
+    public Block(String block) {
         this.blockNum = block;
     }
     
-    public int getBlockNum() {
+    public String getBlockNum() {
         return blockNum;
     }
 }
