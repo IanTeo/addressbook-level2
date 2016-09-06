@@ -3,20 +3,14 @@ package seedu.addressbook.common;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
 
-public class UtilsTest {
-    private Utils utils;
-    
-    @Before
-    public void setup() {
-        utils = new Utils();
-    }
-    
+public class UtilsTest {    
     /**
      * Test null arguments for isAnyNull()
      */
@@ -57,23 +51,23 @@ public class UtilsTest {
     
     @Test
     public void elementsAreUnique_emptySetShouldReturnTrue() {
-        Set<Object> set = new HashSet<Object>();
+        ArrayList<String> set = new ArrayList<String>();
         assertTrue("empty set must return true", Utils.elementsAreUnique(set));
     }
     
     @Test
     public void elementsAreUnique_singleElementSetShouldReturnTrue() {
-        Set<Object> set = new HashSet<Object>();
-        set.add(new Object());
+        ArrayList<String> set = new ArrayList<String>();
+        set.add("Object");
         assertTrue("set with 1 element must return true", Utils.elementsAreUnique(set));
     }
     
     @Test
     public void elementsAreUnique_multipleUniqueElementSetShouldReturnTrue() {
-        Set<Object> set = new HashSet<Object>();
-        set.add(new Object());
-        set.add(new Object());
-        set.add(new Object());
+        ArrayList<String> set = new ArrayList<String>();
+        set.add("Object 1");
+        set.add("Object 2");
+        set.add("Object 3");
         assertTrue("set with multiple unique elements must return true", Utils.elementsAreUnique(set));
     }
     
@@ -83,21 +77,19 @@ public class UtilsTest {
     
     @Test
     public void elementsAreUnique_multipleNonUniqueElementSetShouldReturnFalse() {
-        Set<Object> set = new HashSet<Object>();
-        Object object = new Object();
-        set.add(object);
-        set.add(object);
-        set.add(new Object());
+        ArrayList<String> set = new ArrayList<String>();
+        set.add("Object 1");
+        set.add("Object 1");
+        set.add("Object 2");
         assertFalse("set with 2 same elements must return false", Utils.elementsAreUnique(set));
     }
     
     @Test
     public void elementsAreUnique_allSameElementSetShouldReturnFalse() {
-        Set<Object> set = new HashSet<Object>();
-        Object object = new Object();
-        set.add(object);
-        set.add(object);
-        set.add(object);
+        ArrayList<String> set = new ArrayList<String>();
+        set.add("Object 1");
+        set.add("Object 1");
+        set.add("Object 1");
         assertFalse("set with all same elements must return false", Utils.elementsAreUnique(set));
     }
 }
