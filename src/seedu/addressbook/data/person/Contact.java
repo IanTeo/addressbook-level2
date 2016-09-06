@@ -16,6 +16,7 @@ public abstract class Contact {
         return value;
     }
     
+    @Override
     public abstract boolean equals(Object other);
 
     @Override
